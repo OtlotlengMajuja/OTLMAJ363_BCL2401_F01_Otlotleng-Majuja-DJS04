@@ -45,5 +45,23 @@ class BookPreview extends HTMLElement {
         `;
     }
 
+    connectedCallback() {
+        const image = this.getAttribute('image');
+        const title = this.getAttribute('title');
+        const authorId = this.getAttribute('author');
+        const author = authors[authorId];
+
+        this.shadowRoot.querySelector('.preview__image').src = image;
+        this.shadowRoot.querySelector('.preview__title').innerText = title;
+        this.shadowRoot.querySelector('.preview__author').innerText = author;
+
+        this.addEventListener('click', this.handleClick);
+    }
+
+    disconnectedCallback() {
+        this.removeEventListener('click', this.handleClick);
+    }
+
+
 }
 
