@@ -36,4 +36,4 @@ Managing asynchronous programming, scoping, and variable hoisting can be tricky 
 
 ## Overall Learning Experience
 
-Academically speaking, working on this project provides a comprehensive understanding of object-oriented programming, event handling, and data manipulation in JavaScript.
+Working on this project provided a comprehensive understanding of object-oriented programming, event handling, and data manipulation in JavaScript.
