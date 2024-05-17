@@ -45,10 +45,11 @@ class BookPreview extends HTMLElement {
         `;
     }
 
+    // Called when the element is inserted into the DOM. You use this to fetch attributes and attach event listeners.
     connectedCallback() {
-        const image = this.getAttribute('image');
-        const title = this.getAttribute('title');
-        const authorId = this.getAttribute('author');
+        const image = this.getAttribute('image'); // Retrieves the value of the 'image' attribute from HTML tag 
+        const title = this.getAttribute('title'); // Retrieves the value of the 'title' attribute from HTML tag 
+        const authorId = this.getAttribute('author'); // Retrieves the value of the 'author' attribute from HTML tag 
         const author = authors[authorId];
 
         this.shadowRoot.querySelector('.preview__image').src = image;
@@ -57,11 +58,26 @@ class BookPreview extends HTMLElement {
 
         this.addEventListener('click', this.handleClick);
     }
-
+    // Called when the element is removed from the DOM. You use this to detach event listeners.
     disconnectedCallback() {
         this.removeEventListener('click', this.handleClick);
     }
 
+    handleClick() {
+        const detailElement = document.querySelector('[data-list-active]');
+        const isOpen = detailElement.open;
 
+        if (isOpen) {
+            detailElement.open = false;
+        } else {
+            const book = books.find(book => book.id === this.getAttribute('data-preview'));
+            detailElement.open = true;
+            document.querySelector('[data-list-blur]').src = book.image;
+            document.querySelector('[data-list-image]').src = book.image;
+            document.querySelector('[data-list-title]').innerText = book.title;
+            document.querySelector('[data-list-subtitle]').innerText = `${authors[book.author]} (${new Date(book.published).getFullYear()})`;
+            document.querySelector('[data-list-description]').innerText = book.description;
+        }
+    }
 }
 
