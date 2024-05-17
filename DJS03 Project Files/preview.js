@@ -1,7 +1,7 @@
 import { books, authors } from './data.js';
 
 // Set up the BookPreview class 
-export class BookPreview extends HTMLElement {
+class BookPreview extends HTMLElement {
     constructor() {
         super();
         // Uses 'shadow' DOM to encapsulate styles and markup

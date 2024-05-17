@@ -1,5 +1,5 @@
 import { books, authors, genres, BOOKS_PER_PAGE } from './data.js';
-import { BookPreview } from './preview.js';
+// import { BookPreview } from './preview.js';
 
 class BookStore {
     constructor(books, authors, genres, booksPerPage) {
