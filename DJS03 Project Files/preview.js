@@ -1,7 +1,7 @@
 import { books, authors } from './data.js';
 
 // Set up the BookPreview class 
-class BookPreview extends HTMLElement {
+export class BookPreview extends HTMLElement {
     constructor() {
         super();
         // Uses 'shadow' DOM to encapsulate styles and markup
@@ -84,3 +84,14 @@ class BookPreview extends HTMLElement {
 
 // Creates new custom HTML element called <book-preview>
 customElements.define('book-preview', BookPreview);
+
+// Initialize the book previews
+const bookListElement = document.getElementById('bookList');
+books.forEach(book => {
+    const bookElement = document.createElement('book-preview');
+    bookElement.setAttribute('image', book.image);
+    bookElement.setAttribute('title', book.title);
+    bookElement.setAttribute('author', book.author);
+    bookElement.setAttribute('data-preview', book.id);
+    bookListElement.appendChild(bookElement);
+});
