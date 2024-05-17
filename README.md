@@ -36,6 +36,4 @@ Managing asynchronous programming, scoping, and variable hoisting can be tricky 
 
 ## Overall Learning Experience
 
-Academically speaking, working on this project provides a comprehensive understanding of object-oriented programming, event handling, and data manipulation in JavaScript..
-
-Personally speaking, this project has been draining, frustrating, and demoralising but absolutely taught me that giving up is not an option when you have a deadline and to just do my best. Since we have only just begun and are barely at the beginning, I know that I'm still going to struggle and this was a great tester for my limits.
+Academically speaking, working on this project provides a comprehensive understanding of object-oriented programming, event handling, and data manipulation in JavaScript.
