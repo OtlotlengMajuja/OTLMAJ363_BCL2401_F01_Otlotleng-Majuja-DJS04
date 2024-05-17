@@ -63,6 +63,7 @@ class BookPreview extends HTMLElement {
         this.removeEventListener('click', this.handleClick);
     }
 
+    // Toggles detailElement's open state, and if it's being opened, it populates various elements in the document with data from the selected book
     handleClick() {
         const detailElement = document.querySelector('[data-list-active]');
         const isOpen = detailElement.open;
@@ -81,3 +82,5 @@ class BookPreview extends HTMLElement {
     }
 }
 
+// Creates new custom HTML element called <book-preview>
+customElements.define('book-preview', BookPreview);
