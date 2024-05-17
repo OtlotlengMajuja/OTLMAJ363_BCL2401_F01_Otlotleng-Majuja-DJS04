@@ -1,5 +1,5 @@
 import { books, authors, genres, BOOKS_PER_PAGE } from './data.js';
-// import { BookPreview } from './preview.js';
+// import './preview.js';
 
 class BookStore {
     constructor(books, authors, genres, booksPerPage) {
@@ -192,7 +192,7 @@ class BookStore {
             messageElement.classList.remove('list__message_show');
         }
 
-        listItemsElement.innerHTML = '';
+        listItemsElement.innerHTML = ''; // Clears current books
         this.renderBooks(this.getBooksToRender());
         this.updateShowMoreButton();
         window.scrollTo({ top: 0, behavior: 'smooth' });
